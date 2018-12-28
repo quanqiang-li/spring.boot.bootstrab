@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../css/bootstrap.css">
+<title>自适应层</title>
+</head>
+<body>
+	<div class="container">
+	<h1>bootstrap支持的自适应屏宽度</h1>
+	<code>
+	<pre>
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+</pre>
+</code>
+	<h1>由于我们在Sass中编写源CSS，因此我们所有的媒体查询都可以通过Sass mixins获得：</h1>
+	<code>
+	<pre>
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+
+// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+.custom-class {
+  display: none;
+}
+@include media-breakpoint-up(sm) {
+  .custom-class {
+    display: block;
+  }
+}
+</pre>
+</code>
+		
+	</div>
+	<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+</body>
+</html>
